@@ -1,0 +1,13 @@
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\bin\Debug\netcoreapp3.1\Lotteries.exe
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\bin\Debug\netcoreapp3.1\Lotteries.deps.json
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\bin\Debug\netcoreapp3.1\Lotteries.runtimeconfig.json
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\bin\Debug\netcoreapp3.1\Lotteries.runtimeconfig.dev.json
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\bin\Debug\netcoreapp3.1\Lotteries.dll
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\bin\Debug\netcoreapp3.1\Lotteries.pdb
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\obj\Debug\netcoreapp3.1\Lotteries.csprojAssemblyReference.cache
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\obj\Debug\netcoreapp3.1\Lotteries.AssemblyInfoInputs.cache
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\obj\Debug\netcoreapp3.1\Lotteries.AssemblyInfo.cs
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\obj\Debug\netcoreapp3.1\Lotteries.csproj.CoreCompileInputs.cache
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\obj\Debug\netcoreapp3.1\Lotteries.dll
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\obj\Debug\netcoreapp3.1\Lotteries.pdb
+C:\Users\DCV\Desktop\Code\05 C#\Lotteries\Lotteries\obj\Debug\netcoreapp3.1\Lotteries.genruntimeconfig.cache
