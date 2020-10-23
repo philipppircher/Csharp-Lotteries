@@ -1,5 +1,4 @@
 ﻿using Lotteries.Classes;
-using System;
 
 namespace Lotteries
 {

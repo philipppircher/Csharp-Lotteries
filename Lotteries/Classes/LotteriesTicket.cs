@@ -1,44 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Lotteries.Classes
 {
-    class LotteriesTicket
+    class LotteriesTicket : LotteriesClass
     {
-        public int[] TicketNumbers{ get; private set; }
-        public int FullNumber { get; private set; }
-
-        public LotteriesTicket(int validDigitLength)
+        public LotteriesTicket()
         {
-            this.TicketNumbers = EnterNumbers(validDigitLength);
-            FullNumber = GetFullNumber();
+            EnterNumbers();
         }
 
-        private int[] EnterNumbers(int validDigitLength)
+        private void EnterNumbers()
         {
-            int[] numbers = new int[validDigitLength];
-
-            for (int i = 0; i < validDigitLength; i++)
+            int num;
+            int counter = 0;
+            do
             {
-                Console.WriteLine(i + 1 + ".Ziffer: ");
-                numbers[i] = TryParseUserInputToInt();
-            }
+                Console.WriteLine(counter + 1 + ".Ziffer: ");
 
+                num = TryParseUserInputToInt();
+
+                  if (IsNumberInNumbersIncluded(num))
+                  {
+                        Console.WriteLine("Zahl bereits gewählt\n");
+                  }
+                  else
+                  {
+                        Numbers.Add(num);
+                        Console.WriteLine("Zahl " + num + " gewählt\n");
+                        counter++;
+                  }
+            } while (counter < ValidLength);
+
+            this.FullNumber = GetFullNumber();
             Console.WriteLine("Das Lottoticket ist ausgefüllt");
-            return numbers;
-        }
-
-        private int GetFullNumber()
-        {
-            string concat = "";
-
-            for (int i = 0; i < TicketNumbers.Length; i++)
-            {
-                concat += "" + TicketNumbers[i];
-            }
-
-            return Int32.Parse(concat);
         }
 
         private int TryParseUserInputToInt()

@@ -15,14 +15,14 @@ namespace Lotteries.Classes
         }
 
         private static void PrintGreeting(int validDigitLength)
-        {
+        {                                                                                                      
             Console.WriteLine("Willkommen bei der Lotterie");
-            Console.WriteLine("Bitte eine " + validDigitLength + " stellige Zahl eingeben: ");
+            Console.WriteLine("Bitte eine " + validDigitLength + " stellige Zahl eingeben: \n");
         }
 
         private static LotteriesNumber GetLotteriesNumber(int digitLength)
         {
-            LotteriesNumber lotteriesNumber = new LotteriesNumber(digitLength);
+            LotteriesNumber lotteriesNumber = new LotteriesNumber();
             return lotteriesNumber;
         }
 
@@ -31,7 +31,7 @@ namespace Lotteries.Classes
             LotteriesTicket ticket;
            
             PrintGreeting(validDigitLength);
-            ticket = new LotteriesTicket(validDigitLength);
+            ticket = new LotteriesTicket();
             return ticket;
         }
     }

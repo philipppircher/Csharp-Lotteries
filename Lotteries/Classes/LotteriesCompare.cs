@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Lotteries.Classes
 {
@@ -17,24 +15,23 @@ namespace Lotteries.Classes
             PrintTicketWithRandomNumberComparison();
         }
 
-
         private void PrintTicketWithRandomNumberComparison()
         {
             int matchingNumbers = 0;
             Console.WriteLine("Ticket\t" + "|" + "\tLotterie" + "|" + "\tTreffer");
             Console.WriteLine("---------------------------------------------");
 
-            for (int i = 0; i < lotteriesNumber.RandomNumbers.Length; i++)
+            for (int i = 0; i < lotteriesNumber.ValidLength; i++)
             {
                 bool match = false;
 
-                if (lotteriesNumber.RandomNumbers[i] == lotteriesTicket.TicketNumbers[i])
+                if (lotteriesNumber.Numbers[i] == lotteriesTicket.Numbers[i])
                 {
                     match = true;
                     matchingNumbers++;
                 }
 
-                Console.Write(lotteriesTicket.TicketNumbers[i] + "\t" + "|" + "\t" + lotteriesNumber.RandomNumbers[i] +
+                Console.Write(lotteriesTicket.Numbers[i] + "\t" + "|" + "\t" + lotteriesNumber.Numbers[i] +
                     "\t" + "|" + "\t" + match +"\n");
             }
 

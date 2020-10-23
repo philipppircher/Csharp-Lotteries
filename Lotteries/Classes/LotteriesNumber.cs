@@ -1,41 +1,29 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Lotteries.Classes
 {
-    class LotteriesNumber
-    {
-        public int[] RandomNumbers { get; private set; }
-        public int FullNumber { get; private set; }
-
-        public LotteriesNumber(int validDigitLength)
+    class LotteriesNumber : LotteriesClass
+    { 
+        public LotteriesNumber()
         {
-            CreateRandomNumbers(validDigitLength);
-            FullNumber = GetFullNumber();
+            CreateRandomNumbers();
         }
 
-        private int GetFullNumber()
-        {
-            string concat = "";
-
-            for (int i = 0; i < RandomNumbers.Length; i++)
-            {
-                concat += "" + RandomNumbers[i];
-            }
-
-            return Int32.Parse(concat);
-        }
-
-        private void CreateRandomNumbers(int validDigitLength)
+        private void CreateRandomNumbers()
         {
             Random random = new Random();
-            RandomNumbers = new int[validDigitLength];
 
-            for (int i = 0; i < validDigitLength; i++)
+            for (int i = 0; i < ValidLength; i++)
             {
-                RandomNumbers[i] = random.Next(9) + 1;
-            }
+                int rand;
+
+                do {
+                    rand = random.Next(9) + 1;
+                } while (IsNumberInNumbersIncluded(rand)) ;
+                Numbers.Add(rand);
+            }   
+
+            FullNumber = GetFullNumber();
         }
     }
 }
