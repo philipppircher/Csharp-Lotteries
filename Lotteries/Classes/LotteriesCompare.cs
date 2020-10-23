@@ -2,11 +2,13 @@
 
 namespace Lotteries.Classes
 {
+    /// <summary>
+    /// Prints a list to console window of matching Numbers of LotteriesTicket and LotteriesNumber
+    /// </summary>
     class LotteriesCompare
     {
         private LotteriesTicket lotteriesTicket;
         private LotteriesNumber lotteriesNumber;
-        private int matchingNumbers = 0;
 
         public LotteriesCompare(LotteriesTicket lotteriesTicket, LotteriesNumber lotteriesNumber)
         {
@@ -23,16 +25,16 @@ namespace Lotteries.Classes
 
             for (int i = 0; i < lotteriesNumber.ValidLength; i++)
             {
-                bool match = false;
+                bool isMatching = false;
 
                 if (lotteriesNumber.Numbers[i] == lotteriesTicket.Numbers[i])
                 {
-                    match = true;
+                    isMatching = true;
                     matchingNumbers++;
                 }
 
                 Console.Write(lotteriesTicket.Numbers[i] + "\t" + "|" + "\t" + lotteriesNumber.Numbers[i] +
-                    "\t" + "|" + "\t" + match +"\n");
+                    "\t" + "|" + "\t" + isMatching +"\n");
             }
 
             PrintMatchingNumbersWithResult(matchingNumbers);

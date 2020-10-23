@@ -1,38 +1,36 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography;
 using System.Text;
 
 namespace Lotteries.Classes
 {
+    /// <summary>
+    /// Start in Main method and print greeting Message
+    /// </summary>
     class LotteriesMenu
     {
+        /// <summary>
+        /// <para>initalize instances (LotteriesTicket, LotteriesNumber)</para>
+        /// Print greeting Message
+        /// </summary>
         public static void LotteriesController()
         {
-            int digitLength = 6;
-            LotteriesTicket ticket = GetLotteriesTicket(digitLength);
-            LotteriesNumber randomNumber = GetLotteriesNumber(digitLength);
+            LotteriesNumber randomNumber = new LotteriesNumber();
+
+            PrintGreeting(randomNumber.ValidLength);
+            LotteriesTicket ticket = new LotteriesTicket();
             LotteriesCompare compareTicketWithNumber = new LotteriesCompare(ticket, randomNumber);
         }
 
-        private static void PrintGreeting(int validDigitLength)
+        /// <summary>
+        /// Prints a greeting Message to console window
+        /// </summary>
+        private static void PrintGreeting(int digitLength)
         {                                                                                                      
             Console.WriteLine("Willkommen bei der Lotterie");
-            Console.WriteLine("Bitte eine " + validDigitLength + " stellige Zahl eingeben: \n");
-        }
-
-        private static LotteriesNumber GetLotteriesNumber(int digitLength)
-        {
-            LotteriesNumber lotteriesNumber = new LotteriesNumber();
-            return lotteriesNumber;
-        }
-
-        private static LotteriesTicket GetLotteriesTicket(int validDigitLength)
-        {
-            LotteriesTicket ticket;
-           
-            PrintGreeting(validDigitLength);
-            ticket = new LotteriesTicket();
-            return ticket;
+            Console.WriteLine("Bitte eine " + digitLength + " stellige Zahl eingeben:\n");
         }
     }
 }

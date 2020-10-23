@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace Lotteries.Classes
 {
+    /// <summary>
+    /// LotterisClass is Superclass of LotterisNumber and LotteriesTicket
+    /// </summary>
     class LotteriesClass
     {
         public List<int> Numbers { get; set; }
@@ -11,7 +14,7 @@ namespace Lotteries.Classes
 
         public int ValidLength { get; private set; }
 
-        public LotteriesClass()
+        protected LotteriesClass()
         {
             Numbers = new List<int>();
             ValidLength = 6;

@@ -13,27 +13,31 @@ namespace Lotteries.Classes
         private void EnterNumbers()
         {
             int num;
-            int counter = 0;
+
             do
             {
-                Console.WriteLine(counter + 1 + ".Ziffer: ");
+                Console.WriteLine((Numbers.Count + 1) + ".Ziffer: ");
 
                 num = TryParseUserInputToInt();
+                TryAddNumberToNumbers(num);
 
-                  if (IsNumberInNumbersIncluded(num))
-                  {
-                        Console.WriteLine("Zahl bereits gewählt\n");
-                  }
-                  else
-                  {
-                        Numbers.Add(num);
-                        Console.WriteLine("Zahl " + num + " gewählt\n");
-                        counter++;
-                  }
-            } while (counter < ValidLength);
+            } while (Numbers.Count < ValidLength);
 
             this.FullNumber = GetFullNumber();
             Console.WriteLine("Das Lottoticket ist ausgefüllt");
+        }
+
+
+        private void TryAddNumberToNumbers(int num) {
+            if (IsNumberInNumbersIncluded(num))
+            {
+                Console.WriteLine("Zahl bereits gewählt\n", Console.ForegroundColor = Console.ForegroundColor = ConsoleColor.Red); 
+            }
+            else
+            {
+                Numbers.Add(num);
+                Console.WriteLine("Zahl " + num + " gewählt\n");
+            }
         }
 
         private int TryParseUserInputToInt()
