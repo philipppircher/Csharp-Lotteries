@@ -10,30 +10,45 @@ namespace Lotteries.Classes
     class LotteriesClass
     {
         public List<int> Numbers { get; set; }
-        public int FullNumber { get; protected set; }
 
         public int ValidLength { get; private set; }
+
+        public int MaxValue { get; private set; }
 
         protected LotteriesClass()
         {
             Numbers = new List<int>();
             ValidLength = 6;
+            MaxValue = 45;
         }
-        protected int GetFullNumber()
+
+        protected int GetFullNumberAsIntArray()
         {
-            string concat = "";
+            int[] element = new int[ValidLength];
 
             for (int i = 0; i < ValidLength; i++)
             {
-                concat += "" + Numbers.ElementAt(i);
+                element[i] = Numbers.ElementAt(i);
             }
 
-            return Int32.Parse(concat);
+            return Int32.Parse(this.ToString());
         }
 
         protected bool IsNumberInNumbersIncluded(int number)
         {
             return Numbers.Contains(number);
+        }
+
+        public override string ToString()
+        {
+            string concat = "";
+
+            for (int i = 0; i < ValidLength; i++)
+            {
+                concat += "" + Numbers.ElementAt(i) + ", ";
+            }
+
+            return concat;
         }
     }
 }

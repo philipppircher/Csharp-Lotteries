@@ -19,7 +19,7 @@ namespace Lotteries.Classes
         {
             LotteriesNumber randomNumber = new LotteriesNumber();
 
-            PrintGreeting(randomNumber.ValidLength);
+            PrintGreeting(randomNumber.ValidLength, randomNumber.MaxValue);
             LotteriesTicket ticket = new LotteriesTicket();
             LotteriesCompare compareTicketWithNumber = new LotteriesCompare(ticket, randomNumber);
         }
@@ -27,10 +27,10 @@ namespace Lotteries.Classes
         /// <summary>
         /// Prints a greeting Message to console window
         /// </summary>
-        private static void PrintGreeting(int digitLength)
+        private static void PrintGreeting(int digitLength, int maxValue)
         {                                                                                                      
             Console.WriteLine("Willkommen bei der Lotterie");
-            Console.WriteLine("Bitte eine " + digitLength + " stellige Zahl eingeben:\n");
+            Console.WriteLine("Bitte eine " + digitLength + " stellige Zahl eingeben von 0 bis " + maxValue + "\n");
         }
     }
 }

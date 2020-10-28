@@ -18,12 +18,10 @@ namespace Lotteries.Classes
                 int rand;
 
                 do {
-                    rand = random.Next(9) + 1;
+                    rand = random.Next(45) + 1;
                 } while (IsNumberInNumbersIncluded(rand)) ;
                 Numbers.Add(rand);
-            }   
-
-            FullNumber = GetFullNumber();
+            }
         }
     }
 }

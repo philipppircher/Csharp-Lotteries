@@ -51,8 +51,8 @@ namespace Lotteries.Classes
                 Console.WriteLine("Du hast keine Treffer gelandet");
             }
 
-            Console.WriteLine("Deine Ticket eingabe:\t " + lotteriesTicket.FullNumber);
-            Console.WriteLine("Gewinnspielnummer:\t " + lotteriesNumber.FullNumber);
+            Console.WriteLine("Deine Ticket eingabe:\t " + lotteriesTicket.ToString());
+            Console.WriteLine("Gewinnspielnummer:\t " + lotteriesNumber.ToString());
         }
     }
 }

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace Lotteries.Classes
 {
+    /// <summary>
+    /// User Ticket with number to enter a length of six digits
+    /// </summary>
     class LotteriesTicket : LotteriesClass
     {
         public LotteriesTicket()
@@ -23,20 +26,22 @@ namespace Lotteries.Classes
 
             } while (Numbers.Count < ValidLength);
 
-            this.FullNumber = GetFullNumber();
             Console.WriteLine("Das Lottoticket ist ausgefüllt");
         }
-
 
         private void TryAddNumberToNumbers(int num) {
             if (IsNumberInNumbersIncluded(num))
             {
-                Console.WriteLine("Zahl bereits gewählt\n", Console.ForegroundColor = Console.ForegroundColor = ConsoleColor.Red); 
+                Console.WriteLine("Zahl bereits gewählt\n"); 
             }
-            else
+            else if (num < this.MaxValue + 1 && num > 0)
             {
                 Numbers.Add(num);
                 Console.WriteLine("Zahl " + num + " gewählt\n");
+            }
+            else
+            {
+                Console.WriteLine("\nZahl liegt nicht zwischen 1 bis 45");
             }
         }
 
@@ -54,14 +59,14 @@ namespace Lotteries.Classes
                     do
                     {
                         inputAsString = Console.ReadLine();
-                    } while (!IsInputLengthOneDigit(inputAsString));
+                    } while (!IsInputLengthValid(inputAsString));
 
                     inputToInt = Int32.Parse(inputAsString);
                     isSet = true;
                 }
                 catch
                 {
-                    Console.WriteLine("Ungültige Zahleneingabe!\n");
+                    Console.WriteLine("\nUngültige Eingabe, Wert ist keine Zahl!\n");
                 }
             } while (!isSet);
 
@@ -69,20 +74,20 @@ namespace Lotteries.Classes
         }
 
 
-        private bool IsInputLengthOneDigit(string inputString)
+        private bool IsInputLengthValid(string inputString)
         {
-            bool isOneDigit = false;
+            bool isDigitLengthValid = false;
 
-            if (inputString.Length == 1)
+            if (inputString.Length > 0 && inputString.Length < 3)
             {
-                isOneDigit = true;    
+                isDigitLengthValid = true;    
             }
             else
             {
-                Console.WriteLine("Ungültige Eingabe");
-                isOneDigit = false;
+                Console.WriteLine("Ungültige Eingabe, Zahl ist nicht ein bis zwei stellig!\n");
+                isDigitLengthValid = false;
             }
-            return isOneDigit;
+            return isDigitLengthValid;
         }
     }
 }
